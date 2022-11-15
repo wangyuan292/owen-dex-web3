@@ -62,7 +62,7 @@ contract OwenSwapERC20 {
         emit Transfer(address(this), to, value);
     }
 
-    //LP 代币销毁
+    //LP 代币燃烧
     function _burn(address from, uint value) internal {
         balanceOf[from] = balanceOf[from].sub(value);
         totalSupply = totalSupply.sub(value);
