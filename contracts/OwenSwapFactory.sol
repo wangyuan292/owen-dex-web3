@@ -73,5 +73,10 @@ contract OwenSwapFactory is IUniswapV2Factory{
         emit PairCreated(token0, token1, pair, allPairs.length);
     }
 
+    //设置手续费接收地址
+    function setFeeTo(address _feeTo) external {
+        require(feeToSetter == msg.sender, "OwenSwap: FORBIDDEN");
+        feeTo = _feeTo;
+    }
 
 }
